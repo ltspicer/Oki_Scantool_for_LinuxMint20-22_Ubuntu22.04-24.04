@@ -1,7 +1,7 @@
 # Oki Scantool on Linux Mint 20.x/21.1, Ubuntu 22.04/22.10
-Howto, wie das Oki Scantool (Python2) zu benutzen
+Anleitung, wie das Oki Scantool (Python2) zum laufen zu bringen
 
-Hier die Lösung! Mein System ist Linux Mint 21.1 mate (Ubuntu 22.04) 64bit.
+Mein System ist Linux Mint 21.1 mate (Ubuntu 22.04) 64bit.
 
 Zuerst überprüfen, ob in /usr/share/sane/xsane das Verzeichnis doc ein echtes Verzeichnis ist oder nur ein Symlink.
 Falls das ein Symlink ist, diesen umbenennen in doc.alt . Anschliessend hier ein Verzeichnis namens doc erstellen.
@@ -39,7 +39,7 @@ Nun wie gewohnt mit sudo okiscanadm einen Netzwerk Scanner hinzufügen.
 
 Howto use Oki Scantool (Python2)
 
-Here is the solution! My system is Linux Mint 21.1 mate (Ubuntu 22.04) 64bit.
+My system is Linux Mint 21.1 mate (Ubuntu 22.04) 64bit.
 
 First check if in /usr/share/sane/xsane the directory doc is a real directory or just a symlink.
 If it is a symlink, rename it to doc.old . Then create a directory named doc here.
