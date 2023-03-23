@@ -29,6 +29,7 @@ okiscantool eingeben. Nun sollte unser Oki Scantool öffnen.
 Jetzt System rebooten!
 Nun wie gewohnt mit sudo okiscanadm einen Netzwerk Scanner hinzufügen.
 
+---------------------
 
 Here is the solution! My system is Linux Mint 21.1 mate (Ubuntu 22.04) 64bit.
 
