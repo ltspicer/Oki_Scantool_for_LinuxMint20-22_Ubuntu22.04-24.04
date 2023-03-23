@@ -1,5 +1,5 @@
 # Oki Scantool on Linux Mint 20.x/21.1, Ubuntu 22.04/22.10
-Howto use Oki Scantool (Python2)
+Howto, wie das Oki Scantool (Python2) zu benutzen
 
 Hier die Lösung! Mein System ist Linux Mint 21.1 mate (Ubuntu 22.04) 64bit.
 
@@ -34,6 +34,8 @@ Jetzt System rebooten!
 Nun wie gewohnt mit sudo okiscanadm einen Netzwerk Scanner hinzufügen.
 
 ---------------------
+
+Howto use Oki Scantool (Python2)
 
 Here is the solution! My system is Linux Mint 21.1 mate (Ubuntu 22.04) 64bit.
 
