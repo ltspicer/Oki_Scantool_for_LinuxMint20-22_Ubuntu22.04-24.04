@@ -58,5 +58,3 @@ sudo dpkg -i python-cairo_1.16.2-2ubuntu2_amd64.deb python-gobject-2_2.28.6-14ub
 enter okiscantool. Now our Oki scan tool should open.
 Now reboot the system!
 Now add a network scanner as usual with sudo okiscanadm.
-
-Translated with www.DeepL.com/Translator (free version)
