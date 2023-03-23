@@ -17,7 +17,9 @@ Hier die jeweiligen Dateimanager:
     Ubuntu Budgie: nemo
 
 Jetzt geht's ans python2 installieren (Quelle: https://linux.how2shout.com/how-to-install-python-2-on-ubuntu-22-04-lts-jammy-linux/ ).
+
 sudo apt update
+
 sudo apt install -y python2 libffi7 libgdk-pixbuf2.0-0
 
 Erstelle nun ein Verzeichnis zBsp oki_treiber, betrete dieses und öffne das Terminal da.
@@ -53,7 +55,9 @@ Here are the file managers:
     Ubuntu Budgie: nemo
 
 Now it's time to install python2 (Source: https://linux.how2shout.com/how-to-install-python-2-on-ubuntu-22-04-lts-jammy-linux/ ).
+
 sudo apt update
+
 sudo apt install -y python2 libffi7 libgdk-pixbuf2.0-0
 
 Now create a directory e.g. oki_driver, enter it and open the terminal there.
