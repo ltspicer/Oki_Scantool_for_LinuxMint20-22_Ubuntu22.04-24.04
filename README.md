@@ -1,4 +1,4 @@
-# Oki-Scantool-on-Linux-Mint-20.x-21.1-Ubuntu-22.04-22.10
+# Oki Scantool on Linux Mint 20.x/21.1, Ubuntu 22.04/22.10
 Howto use Oki Scantool (Python2)
 
 Hier die Lösung! Mein System ist Linux Mint 21.1 mate (Ubuntu 22.04) 64bit.
