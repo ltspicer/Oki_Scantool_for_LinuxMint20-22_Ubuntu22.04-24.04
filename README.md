@@ -22,11 +22,15 @@ sudo apt install -y python2 libffi7 libgdk-pixbuf2.0-0
 
 Erstelle nun ein Verzeichnis zBsp oki_treiber, betrete dieses und öffne das Terminal da.
 Lade die angehängten deb Pakete runter und speichere diese ebenfalls in diesem Verzeichnis.
+
 Jetzt installieren:
+
 sudo dpkg -i python-cairo_1.16.2-2ubuntu2_amd64.deb python-gobject-2_2.28.6-14ubuntu1_amd64.deb pygtk2.deb okimfpdriver.deb
 
 okiscantool eingeben. Nun sollte unser Oki Scantool öffnen.
+
 Jetzt System rebooten!
+
 Nun wie gewohnt mit sudo okiscanadm einen Netzwerk Scanner hinzufügen.
 
 ---------------------
@@ -52,9 +56,13 @@ sudo apt install -y python2 libffi7 libgdk-pixbuf2.0-0
 
 Now create a directory e.g. oki_driver, enter it and open the terminal there.
 Download the attached deb packages and save them in this directory as well.
+
 Now install:
+
 sudo dpkg -i python-cairo_1.16.2-2ubuntu2_amd64.deb python-gobject-2_2.28.6-14ubuntu1_amd64.deb pygtk2.deb okimfpdriver.deb
 
 enter okiscantool. Now our Oki scan tool should open.
+
 Now reboot the system!
+
 Now add a network scanner as usual with sudo okiscanadm.
