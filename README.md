@@ -6,7 +6,7 @@
         cd ~/Downloads
 
 
-### 2. Copy the command bellow corresponding to your Ubuntu version
+### 2. Copy the command bellow
 
 
         wget https://raw.github.com/ltspicer/Oki-Scantool-on-Linux-Mint-20.x-21.1-Ubuntu-22.04-22.10/main/oki_scantool_ub2404_lm22.sh
