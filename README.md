@@ -1,5 +1,11 @@
 # Oki Scantool on Linux Mint 22, Ubuntu 24.04
 
+
+Many thanks to BassHero
+https://github.com/BassHero/okimfpsdrv
+This script is an extension that also installs the Oki scan tool.
+
+
 ### 1. Open a terminal window (Ctrl + Alt + T) and type the commands bellow
 
 
