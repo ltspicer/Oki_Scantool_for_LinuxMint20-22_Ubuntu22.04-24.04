@@ -1,3 +1,28 @@
+# Oki Scantool on Linux Mint 22, Ubuntu 24.04
+
+### 1. Open a terminal window (Ctrl + Alt + T) and type the commands bellow
+
+
+        cd ~/Downloads
+
+
+### 2. Copy the command bellow corresponding to your Ubuntu version
+
+
+        wget https://raw.github.com/ltspicer/Oki-Scantool-on-Linux-Mint-20.x-21.1-Ubuntu-22.04-22.10/main/oki_scantool_ub2404_lm22.sh
+
+
+### 3. Give the script permission to run
+
+        chmod a+x oki_scantool*.sh
+
+
+### 4. Run the script
+
+        ./oki_scantool*.sh
+
+-----------------------------------------------------
+
 # Oki Scantool on Linux Mint 20.x/21.1, Ubuntu 22.04/22.10
 Anleitung, wie das Oki Scantool (Python2) zum laufen zu bringen
 
