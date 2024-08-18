@@ -37,15 +37,9 @@ Mein System ist Linux Mint 21.1 mate (Ubuntu 22.04) 64bit.
 Zuerst überprüfen, ob in /usr/share/sane/xsane das Verzeichnis doc ein echtes Verzeichnis ist oder nur ein Symlink.
 Falls das ein Symlink ist, diesen umbenennen in doc.alt . Anschliessend hier ein Verzeichnis namens doc erstellen.
 Wenn kein doc Verzeichnis bzw Symlink existiert, kannst Du bei "**Jetzt geht's ans python2 installieren**" weiterfahren.
-Das Erstellen von einem Verzeichnis an dieser Stelle braucht root Rechte! Dazu den Dateimanager (siehe unten) mit sudo ... öffnen (zbsp: sudo caja).
-Hier die jeweiligen Dateimanager:
+Das Erstellen von einem Verzeichnis an dieser Stelle braucht einen Dateimanager root Rechten!
+Siehe hier: https://wiki.ubuntuusers.de/mit_Root-Rechten_arbeiten/#M8-GUI-Werkzeuge
 
-    Ubuntu/LM Cinnamon: nautilus
-    Kubuntu: dolphin
-    Xubuntu: thunar
-    Lubuntu: pcman
-    Ubuntu/LM Mate: caja
-    Ubuntu Budgie: nemo
 
 **Jetzt geht's ans python2 installieren** (Quelle: https://linux.how2shout.com/how-to-install-python-2-on-ubuntu-22-04-lts-jammy-linux/ ).
 
@@ -75,15 +69,9 @@ My system is Linux Mint 21.1 mate (Ubuntu 22.04) 64bit.
 First check if in /usr/share/sane/xsane the directory doc is a real directory or just a symlink.
 If it is a symlink, rename it to doc.old . Then create a directory named doc here.
 If there is no doc directory or symlink, you can continue at "**Now it's time to install python2**".
-Creating a directory at this location needs root privileges! Open the file manager (see below) with sudo ... (e.g.: sudo caja).
-Here are the file managers:
+Creating a directory at this point requires a file manager with root rights!
+See here: https://wiki.ubuntuusers.de/mit_Root-Rechten_arbeiten/#M8-GUI-Werkzeuge
 
-    Ubuntu/LM Cinnamon: nautilus
-    Kubuntu: dolphin
-    Xubuntu: thunar
-    Lubuntu: pcman
-    Ubuntu/LM Mate: caja
-    Ubuntu Budgie: nemo
 
 **Now it's time to install python2** (Source: https://linux.how2shout.com/how-to-install-python-2-on-ubuntu-22-04-lts-jammy-linux/ ).
 
