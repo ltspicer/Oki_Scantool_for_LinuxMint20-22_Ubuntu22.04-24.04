@@ -37,7 +37,7 @@ Mein System ist Linux Mint 21.1 mate (Ubuntu 22.04) 64bit.
 Zuerst überprüfen, ob in /usr/share/sane/xsane das Verzeichnis doc ein echtes Verzeichnis ist oder nur ein Symlink.
 Falls das ein Symlink ist, diesen umbenennen in doc.alt . Anschliessend hier ein Verzeichnis namens doc erstellen.
 Wenn kein doc Verzeichnis bzw Symlink existiert, kannst Du bei "**Jetzt geht's ans python2 installieren**" weiterfahren.
-Das Erstellen von einem Verzeichnis an dieser Stelle braucht einen Dateimanager root Rechten!
+Das Erstellen von einem Verzeichnis an dieser Stelle braucht einen Dateimanager mit root Rechten!
 Siehe hier: https://wiki.ubuntuusers.de/mit_Root-Rechten_arbeiten/#M8-GUI-Werkzeuge
 
 
