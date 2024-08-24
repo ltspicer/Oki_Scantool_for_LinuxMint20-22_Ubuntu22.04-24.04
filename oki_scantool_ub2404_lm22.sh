@@ -7,6 +7,9 @@
 # URL to repo
 url="https://raw.github.com/ltspicer/Oki_Scantool_for_LinuxMint20-22_Ubuntu22.04-24.04/main"
 
+# Local download path
+dl_path="oki_scan_driver"
+
 # Oki scan driver & scan tool install script to ubuntu 24.04 and derivatives.
 # Models: 
 # CX2633 MFP; CX2731 MFP; ES3451 MFP; ES3452 MFP; ES3461 MFP; ES4172LP MFP; 
@@ -19,8 +22,8 @@ url="https://raw.github.com/ltspicer/Oki_Scantool_for_LinuxMint20-22_Ubuntu22.04
 # 1. Oki Scan Driver download files:
 
     cd ~/Downloads
-    mkdir -p oki_scan_driver/python2
-    cd oki_scan_driver
+    mkdir -p $dl_path/python2
+    cd $dl_path
     
     echo "Downloading driver..."
 
@@ -77,7 +80,7 @@ url="https://raw.github.com/ltspicer/Oki_Scantool_for_LinuxMint20-22_Ubuntu22.04
     # Symlink python is python2
     sudo ln -s /usr/bin/python2.7 /usr/bin/python
 
-    cd ~/Downloads/oki_scan_driver
+    cd ~/Downloads/$dl_path
 
     # Get dependencies for okiscanntool
     wget $url/libffi7_3.3-5ubuntu1_amd64.deb
@@ -98,7 +101,7 @@ url="https://raw.github.com/ltspicer/Oki_Scantool_for_LinuxMint20-22_Ubuntu22.04
     sudo dpkg -i okimfpdriver.deb
 
     echo ""
-    echo "Installation Finished! Do reboot now."
+    echo "Installation Finished! Do reboot now:"
     echo ""
     echo "sudo reboot"
     echo ""
@@ -106,12 +109,15 @@ url="https://raw.github.com/ltspicer/Oki_Scantool_for_LinuxMint20-22_Ubuntu22.04
     echo ""
     echo "sudo okiscanadm"
     echo ""
-    echo "for configure a network scanner."
+    echo "to configure a network scanner."
     echo "In some cases appears:"
+    echo ""
     echo "* A network scanner has been added to this PC."
     echo "Your PC could not be added to the MFP. (code=249)"
     echo ""
     echo "In this case the okiscanadm tool must be started a second time, delete the scanner and use okiscanadm again to configure the scanner."
     echo ""
-    echo "Window closes in 10 seconds."
+    echo "Now you can delete the folder: ~/Downloads/$dl_path"
+    echo ""
+    echo "This window closes in 10 seconds."
     sleep 10
