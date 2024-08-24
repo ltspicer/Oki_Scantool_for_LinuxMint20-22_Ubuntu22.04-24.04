@@ -7,7 +7,7 @@
 # URL to repo
 url="https://raw.github.com/ltspicer/Oki-Scantool-on-Linux-Mint-20.x-21.1-Ubuntu-22.04-22.10/main"
 
-# Oki scan driver install script to ubuntu 24.04 and derivatives.
+# Oki scan driver & scan tool install script to ubuntu 24.04 and derivatives.
 # Models: 
 # CX2633 MFP; CX2731 MFP; ES3451 MFP; ES3452 MFP; ES3461 MFP; ES4172LP MFP; 
 # ES4192 MFP; ES5162 MFP; ES5162LP MFP; ES5461 MFP; ES5462 MFP; ES5463 MFP; ES5473 MFP; 
@@ -23,7 +23,8 @@ url="https://raw.github.com/ltspicer/Oki-Scantool-on-Linux-Mint-20.x-21.1-Ubuntu
 	cd oki_scan_driver
 	
 	echo "Downloading driver..."	
-	wget https://github.com/BassHero/okimfpsdrv/releases/download/v1.0/okimfpsdrv_1.7-0_amd64_20230201.deb
+
+    wget $url/okimfpdriver.deb
 	
 	# The Original Oki driver can be downloaded on link:
 	# https://www.oki.com/printing/download/okimfpsdrv_1.7-0_amd64_231225.deb
@@ -76,6 +77,8 @@ url="https://raw.github.com/ltspicer/Oki-Scantool-on-Linux-Mint-20.x-21.1-Ubuntu
 	# Symlink python is python2
     sudo ln -s /usr/bin/python2.7 /usr/bin/python
 
+    cd ~/Downloads/oki_scan_driver
+
 	# Get dependencies for okiscanntool
     wget $url/libffi7_3.3-5ubuntu1_amd64.deb
     wget $url/python-cairo_1.16.2-2ubuntu2_amd64.deb
@@ -90,10 +93,9 @@ url="https://raw.github.com/ltspicer/Oki-Scantool-on-Linux-Mint-20.x-21.1-Ubuntu
 
 	# 2.2.1 Installing Oki Scan Driver	
 
-	cd ~/Downloads/oki_scan_driver	
-
 	echo "Installing driver..."
-	sudo dpkg -i okimfpsdrv_1.7-0_amd64_20230201.deb
+
+    sudo dpkg -i okimfpdriver.deb
 
     echo ""
 	echo "Installation Finished! Do reboot now."
