@@ -18,87 +18,87 @@ url="https://raw.github.com/ltspicer/Oki_Scantool_for_LinuxMint20-22_Ubuntu22.04
 
 # 1. Oki Scan Driver download files:
 
-	cd ~/Downloads
-	mkdir -p oki_scan_driver/python2
-	cd oki_scan_driver
-	
-	echo "Downloading driver..."	
+    cd ~/Downloads
+    mkdir -p oki_scan_driver/python2
+    cd oki_scan_driver
+    
+    echo "Downloading driver..."
 
     wget $url/okimfpdriver.deb
-	
-	# The Original Oki driver can be downloaded on link:
-	# https://www.oki.com/printing/download/okimfpsdrv_1.7-0_amd64_231225.deb
-	# but it don't works. It causes dependency's problems with python.
-	
-	echo "Installing Python2..."	
-	
-	cd python2
+    
+    # The Original Oki driver can be downloaded on link:
+    # https://www.oki.com/printing/download/okimfpsdrv_1.7-0_amd64_231225.deb
+    # but it don't works. It causes dependency's problems with python.
+    
+    echo "Installing Python2..."
+    
+    cd python2
 
-	# python2 (2.7.18-3) [universe]
-	wget http://mirrors.kernel.org/ubuntu/pool/universe/p/python-defaults/python2_2.7.18-3_amd64.deb
+    # python2 (2.7.18-3) [universe]
+    wget http://mirrors.kernel.org/ubuntu/pool/universe/p/python-defaults/python2_2.7.18-3_amd64.deb
 
-	# python2-minimal (= 2.7.18-3)
-	wget http://mirrors.kernel.org/ubuntu/pool/universe/p/python-defaults/python2-minimal_2.7.18-3_amd64.deb
+    # python2-minimal (= 2.7.18-3)
+    wget http://mirrors.kernel.org/ubuntu/pool/universe/p/python-defaults/python2-minimal_2.7.18-3_amd64.deb
 
-	# python2.7-minimal (>= 2.7.18~)
-	wget http://security.ubuntu.com/ubuntu/pool/universe/p/python2.7/python2.7-minimal_2.7.18-13ubuntu1.1_amd64.deb
+    # python2.7-minimal (>= 2.7.18~)
+    wget http://security.ubuntu.com/ubuntu/pool/universe/p/python2.7/python2.7-minimal_2.7.18-13ubuntu1.1_amd64.deb
 
-	# libpython2.7-minimal (= 2.7.18-13ubuntu1.1) [amd64, i386]
-	wget http://security.ubuntu.com/ubuntu/pool/universe/p/python2.7/libpython2.7-minimal_2.7.18-13ubuntu1.1_amd64.deb
+    # libpython2.7-minimal (= 2.7.18-13ubuntu1.1) [amd64, i386]
+    wget http://security.ubuntu.com/ubuntu/pool/universe/p/python2.7/libpython2.7-minimal_2.7.18-13ubuntu1.1_amd64.deb
 
-	# libpython2-stdlib (= 2.7.18-3)
-	wget http://mirrors.kernel.org/ubuntu/pool/universe/p/python-defaults/libpython2-stdlib_2.7.18-3_amd64.deb
+    # libpython2-stdlib (= 2.7.18-3)
+    wget http://mirrors.kernel.org/ubuntu/pool/universe/p/python-defaults/libpython2-stdlib_2.7.18-3_amd64.deb
 
-	# libpython2.7-stdlib (>= 2.7.18~) 
-	wget http://security.ubuntu.com/ubuntu/pool/universe/p/python2.7/libpython2.7-stdlib_2.7.18-13ubuntu1.1_amd64.deb
+    # libpython2.7-stdlib (>= 2.7.18~) 
+    wget http://security.ubuntu.com/ubuntu/pool/universe/p/python2.7/libpython2.7-stdlib_2.7.18-13ubuntu1.1_amd64.deb
 
-	# python2.7 (>= 2.7.18~)
-	wget http://security.ubuntu.com/ubuntu/pool/universe/p/python2.7/python2.7_2.7.18-13ubuntu1.1_amd64.deb
+    # python2.7 (>= 2.7.18~)
+    wget http://security.ubuntu.com/ubuntu/pool/universe/p/python2.7/python2.7_2.7.18-13ubuntu1.1_amd64.deb
 
 
-	# 2. Packages Installation
+    # 2. Packages Installation
 
-	# 2.1 Dependencies
+    # 2.1 Dependencies
 
-	sudo apt install libnsl2
+    sudo apt install libnsl2
 
-	# 2.1.1 python2-minimal and dependencies
-	sudo dpkg -i libpython2.7-minimal_2.7.18-13ubuntu1.1_amd64.deb python2.7-minimal_2.7.18-13ubuntu1.1_amd64.deb python2-minimal_2.7.18-3_amd64.deb
+    # 2.1.1 python2-minimal and dependencies
+    sudo dpkg -i libpython2.7-minimal_2.7.18-13ubuntu1.1_amd64.deb python2.7-minimal_2.7.18-13ubuntu1.1_amd64.deb python2-minimal_2.7.18-3_amd64.deb
 
-	# 2.1.2 libpython2-stdlib and dependencies
-	sudo dpkg -i libpython2.7-stdlib_2.7.18-13ubuntu1.1_amd64.deb libpython2-stdlib_2.7.18-3_amd64.deb
+    # 2.1.2 libpython2-stdlib and dependencies
+    sudo dpkg -i libpython2.7-stdlib_2.7.18-13ubuntu1.1_amd64.deb libpython2-stdlib_2.7.18-3_amd64.deb
 
-	# 2.1.3 python2.7 (>= 2.7.18~) dependency
-	sudo dpkg -i python2.7_2.7.18-13ubuntu1.1_amd64.deb
+    # 2.1.3 python2.7 (>= 2.7.18~) dependency
+    sudo dpkg -i python2.7_2.7.18-13ubuntu1.1_amd64.deb
 
-	# 2.1.4 And finally, python2
-	sudo dpkg -i python2_2.7.18-3_amd64.deb
+    # 2.1.4 And finally, python2
+    sudo dpkg -i python2_2.7.18-3_amd64.deb
 
-	# Symlink python is python2
+    # Symlink python is python2
     sudo ln -s /usr/bin/python2.7 /usr/bin/python
 
     cd ~/Downloads/oki_scan_driver
 
-	# Get dependencies for okiscanntool
+    # Get dependencies for okiscanntool
     wget $url/libffi7_3.3-5ubuntu1_amd64.deb
     wget $url/python-cairo_1.16.2-2ubuntu2_amd64.deb
     wget $url/python-gobject-2_2.28.6-14ubuntu1_amd64.deb
     wget $url/pygtk2.deb
 
-	# Install dependencies for okiscanntool
+    # Install dependencies for okiscanntool
     sudo apt install -y libgdk-pixbuf2.0-0
     sudo dpkg -i libffi7_3.3-5ubuntu1_amd64.deb
     sudo dpkg -i python-cairo_1.16.2-2ubuntu2_amd64.deb python-gobject-2_2.28.6-14ubuntu1_amd64.deb pygtk2.deb
     sudo dpkg -i pygtk2.deb
 
-	# 2.2.1 Installing Oki Scan Driver	
+    # 2.2.1 Installing Oki Scan Driver
 
-	echo "Installing driver..."
+    echo "Installing driver..."
 
     sudo dpkg -i okimfpdriver.deb
 
     echo ""
-	echo "Installation Finished! Do reboot now."
+    echo "Installation Finished! Do reboot now."
     echo ""
     echo "sudo reboot"
     echo ""
