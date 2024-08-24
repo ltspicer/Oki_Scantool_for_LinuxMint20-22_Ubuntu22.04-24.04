@@ -5,7 +5,7 @@
 # This script is an extension that also installs the Oki scan tool.
 
 # URL to repo
-url="https://raw.github.com/ltspicer/Oki-Scantool-on-Linux-Mint-20.x-21.1-Ubuntu-22.04-22.10/main"
+url="https://raw.github.com/ltspicer/Oki_Scantool_for_LinuxMint20-22_Ubuntu22.04-24.04/main"
 
 # Oki scan driver & scan tool install script to ubuntu 24.04 and derivatives.
 # Models: 
