@@ -1,4 +1,4 @@
-# Oki Scantool on Linux Mint 22, Ubuntu 24.04
+# Oki Scantool on Linux Mint 22/22.1, Ubuntu 24.04/25.04
 
 
 Many thanks to BassHero
@@ -14,7 +14,7 @@ This script is an extension that also installs the Oki scan tool.
 
 ### 2. Copy the command bellow
 
-#### - Linux Mint 22, Ubuntu 24.04
+#### - Linux Mint 22, Ubuntu 24.04 (use Linux Mint 22.1 script, if it not works)
         wget https://raw.github.com/ltspicer/Oki_Scantool_for_LinuxMint20-22_Ubuntu22.04-24.04/main/oki_scantool_ub2404_lm22.sh
 
 #### - Linux Mint 22.1, (Ubuntu 25.04 > not tested)
