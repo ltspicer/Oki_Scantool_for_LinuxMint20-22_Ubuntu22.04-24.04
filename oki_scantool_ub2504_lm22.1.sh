@@ -4,6 +4,9 @@
 # https://github.com/BassHero/okimfpsdrv
 # This script is an extension that also installs the Oki scan tool.
 
+# Current version see: https://archive.ubuntu.com/ubuntu/pool/universe/p/python2.7/
+version="1.5"
+
 # URL to repo
 url="https://raw.github.com/ltspicer/Oki_Scantool_for_LinuxMint20-22_Ubuntu22.04-24.04/main"
 
@@ -19,26 +22,29 @@ dl_path="oki_scan_driver"
 # MC332; MC342; MC351; MC352; MC361; MC362; MC363; MC561; MC562; MC563; MC573; MC851; 
 # MC851+; MC852; MC853; MC860; MC861; MC861+; MC862; MC863; MC873; MC883; MPS2731mc; MPS4200mb
 
+echo "I use ubuntu$version version. See: https://archive.ubuntu.com/ubuntu/pool/universe/p/python2.7"
 
-    # Create python2-dummy in apt
+sudo apt -y --fix-broken install
 
-    cd ~/Downloads
-    mkdir -p $dl_path/python2
-    cd $dl_path
-    
-    echo "Downloading driver..."
-    set -e
+# Create python2-dummy in apt
 
-    echo "==> Installiere 'equivs', falls noch nicht vorhanden..."
-    sudo apt-get update
-    sudo apt-get install -y equivs
+cd $HOME/Downloads
+mkdir -p $dl_path/python2
+cd $dl_path
 
-    echo "==> Erstelle Arbeitsverzeichnis..."
-    mkdir -p python2-dummy
-    cd python2-dummy
+echo "Downloading driver..."
+set -e
 
-    echo "==> Erzeuge control-Datei für Dummy-Paket..."
-    equivs-control python2-dummy
+echo "==> Installiere 'equivs', falls noch nicht vorhanden..."
+sudo apt-get update
+sudo apt-get install -y equivs
+
+echo "==> Erstelle Arbeitsverzeichnis..."
+mkdir -p python2-dummy
+cd python2-dummy
+
+echo "==> Erzeuge control-Datei für Dummy-Paket..."
+equivs-control python2-dummy
 
 cat > python2-dummy <<EOF
 Section: misc
@@ -54,111 +60,115 @@ Description: Dummy package to satisfy dependencies for manually installed Python
  This package exists only to satisfy package dependencies.
 EOF
 
-    echo "==> Baue Dummy-Paket..."
-    equivs-build python2-dummy
+echo "==> Baue Dummy-Paket..."
+equivs-build python2-dummy
 
-    echo "==> Installiere Dummy-Paket..."
-    sudo dpkg -i python2_2.7.18_all.deb
+echo "==> Installiere Dummy-Paket..."
+sudo dpkg -i python2_2.7.18_all.deb
 
-    echo "==> Fertig. 'python2' ist jetzt für APT als installiert markiert."
+echo "==> Fertig. 'python2' ist jetzt für APT als installiert markiert."
 
-    cd ..
-
-
-    # 1. Oki Scan Driver download files:
-
-    wget $url/okimfpdriver.deb
-    
-    # The Original Oki driver can be downloaded on link:
-    # https://www.oki.com/printing/download/okimfpsdrv_1.7-0_amd64_231225.deb
-    # but it don't works. It causes dependency's problems with python.
-    
-    echo "Installing Python2..."
-
-    mkdir -p python2    
-    cd python2
-
-    # python2 (2.7.18-3) [universe]
-    wget http://mirrors.kernel.org/ubuntu/pool/universe/p/python-defaults/python2_2.7.18-3_amd64.deb
-
-    # python2-minimal (= 2.7.18-3)
-    wget http://mirrors.kernel.org/ubuntu/pool/universe/p/python-defaults/python2-minimal_2.7.18-3_amd64.deb
-
-    # python2.7-minimal (>= 2.7.18~)
-    wget http://security.ubuntu.com/ubuntu/pool/universe/p/python2.7/python2.7-minimal_2.7.18-13ubuntu1.5_amd64.deb
-
-    # libpython2.7-minimal (= 2.7.18-13ubuntu1.1) [amd64, i386]
-    wget http://security.ubuntu.com/ubuntu/pool/universe/p/python2.7/libpython2.7-minimal_2.7.18-13ubuntu1.5_amd64.deb
-
-    # libpython2-stdlib (= 2.7.18-3)
-    wget http://mirrors.kernel.org/ubuntu/pool/universe/p/python-defaults/libpython2-stdlib_2.7.18-3_amd64.deb
-
-    # libpython2.7-stdlib (>= 2.7.18~) 
-    wget http://security.ubuntu.com/ubuntu/pool/universe/p/python2.7/libpython2.7-stdlib_2.7.18-13ubuntu1.5_amd64.deb
-
-    # python2.7 (>= 2.7.18~)
-    wget http://security.ubuntu.com/ubuntu/pool/universe/p/python2.7/python2.7_2.7.18-13ubuntu1.5_amd64.deb
+cd ..
 
 
-    # 2. Packages Installation
+# 1. Oki Scan Driver download files:
 
-    # 2.1 Dependencies
+wget $url/okimfpdriver.deb
 
-    sudo apt install libnsl2
+# The Original Oki driver can be downloaded on link:
+# https://www.oki.com/printing/download/okimfpsdrv_1.7-0_amd64_231225.deb
+# but it don't works. It causes dependency's problems with python.
 
-    # 2.1.1 python2-minimal and dependencies
-    sudo dpkg -i libpython2.7-minimal_2.7.18-13ubuntu1.5_amd64.deb python2.7-minimal_2.7.18-13ubuntu1.5_amd64.deb python2-minimal_2.7.18-3_amd64.deb
+echo "Installing Python2..."
 
-    # 2.1.2 libpython2-stdlib and dependencies
-    sudo dpkg -i libpython2.7-stdlib_2.7.18-13ubuntu1.5_amd64.deb libpython2-stdlib_2.7.18-3_amd64.deb
+mkdir -p python2    
+cd python2
 
-    # 2.1.3 python2.7 (>= 2.7.18~) dependency
-    sudo dpkg -i python2.7_2.7.18-13ubuntu1.5_amd64.deb
+# python2 (2.7.18-3) [universe]
+wget http://mirrors.kernel.org/ubuntu/pool/universe/p/python-defaults/python2_2.7.18-3_amd64.deb
 
-    # 2.1.4 And finally, python2
-    sudo dpkg -i python2_2.7.18-3_amd64.deb
+# python2-minimal (= 2.7.18-3)
+wget http://mirrors.kernel.org/ubuntu/pool/universe/p/python-defaults/python2-minimal_2.7.18-3_amd64.deb
 
-    # Symlink python is python2
-    sudo ln -s /usr/bin/python2.7 /usr/bin/python
+# python2.7-minimal (>= 2.7.18~)
+wget "http://security.ubuntu.com/ubuntu/pool/universe/p/python2.7/python2.7-minimal_2.7.18-13ubuntu${version}_amd64.deb"
 
-    cd ~/Downloads/$dl_path
+# libpython2.7-minimal (= 2.7.18-13ubuntu1.1) [amd64, i386]
+wget "http://security.ubuntu.com/ubuntu/pool/universe/p/python2.7/libpython2.7-minimal_2.7.18-13ubuntu${version}_amd64.deb"
 
-    # Get dependencies for okiscanntool
-    wget $url/libffi7_3.3-5ubuntu1_amd64.deb
-    wget $url/python-cairo_1.16.2-2ubuntu2_amd64.deb
-    wget $url/python-gobject-2_2.28.6-14ubuntu1_amd64.deb
-    wget $url/pygtk2.deb
+# libpython2-stdlib (= 2.7.18-3)
+wget http://mirrors.kernel.org/ubuntu/pool/universe/p/python-defaults/libpython2-stdlib_2.7.18-3_amd64.deb
 
-    # Install dependencies for okiscanntool
-    sudo apt install -y libgdk-pixbuf2.0-0
-    sudo dpkg -i libffi7_3.3-5ubuntu1_amd64.deb
-    sudo dpkg -i python-cairo_1.16.2-2ubuntu2_amd64.deb python-gobject-2_2.28.6-14ubuntu1_amd64.deb pygtk2.deb
-    sudo dpkg -i pygtk2.deb
+# libpython2.7-stdlib (>= 2.7.18~) 
+wget "http://security.ubuntu.com/ubuntu/pool/universe/p/python2.7/libpython2.7-stdlib_2.7.18-13ubuntu${version}_amd64.deb"
 
-    # 2.2.1 Installing Oki Scan Driver
+# python2.7 (>= 2.7.18~)
+wget "http://security.ubuntu.com/ubuntu/pool/universe/p/python2.7/python2.7_2.7.18-13ubuntu${version}_amd64.deb"
 
-    echo "Installing driver..."
 
-    sudo dpkg -i okimfpdriver.deb
+# 2. Packages Installation
 
-    echo ""
-    echo "Installation Finished! Do reboot now:"
-    echo ""
-    echo "sudo reboot"
-    echo ""
-    echo "After reboot enter:"
-    echo ""
-    echo "sudo okiscanadm"
-    echo ""
-    echo "to configure a network scanner."
-    echo "In some cases appears:"
-    echo ""
-    echo "* A network scanner has been added to this PC."
-    echo "Your PC could not be added to the MFP. (code=249)"
-    echo ""
-    echo "In this case the okiscanadm tool must be started a second time, delete the scanner and use okiscanadm again to configure the scanner."
-    echo ""
-    echo "Now you can delete the folder: ~/Downloads/$dl_path"
-    echo ""
-    echo "This window closes in 10 seconds."
-    sleep 10
+# 2.1 Dependencies
+
+sudo apt -y --fix-broken install
+
+sudo apt install libnsl2
+
+# 2.1.1 python2-minimal and dependencies
+sudo dpkg -i "libpython2.7-minimal_2.7.18-13ubuntu${version}_amd64.deb" "python2.7-minimal_2.7.18-13ubuntu${version}_amd64.deb" "python2-minimal_2.7.18-3_amd64.deb"
+
+# 2.1.2 libpython2-stdlib and dependencies
+sudo dpkg -i "libpython2.7-stdlib_2.7.18-13ubuntu${version}_amd64.deb" "libpython2-stdlib_2.7.18-3_amd64.deb"
+
+# 2.1.3 python2.7 (>= 2.7.18~) dependency
+sudo dpkg -i "python2.7_2.7.18-13ubuntu${version}_amd64.deb"
+
+# 2.1.4 And finally, python2
+sudo dpkg -i python2_2.7.18-3_amd64.deb
+
+# Symlink python is python2
+set +e
+sudo ln -s /usr/bin/python2.7 /usr/bin/python
+set -e
+
+cd $HOME/Downloads/$dl_path
+
+# Get dependencies for okiscanntool
+wget $url/libffi7_3.3-5ubuntu1_amd64.deb
+wget $url/python-cairo_1.16.2-2ubuntu2_amd64.deb
+wget $url/python-gobject-2_2.28.6-14ubuntu1_amd64.deb
+wget $url/pygtk2.deb
+
+# Install dependencies for okiscanntool
+sudo apt install -y libgdk-pixbuf2.0-0
+sudo dpkg -i libffi7_3.3-5ubuntu1_amd64.deb
+sudo dpkg -i python-cairo_1.16.2-2ubuntu2_amd64.deb python-gobject-2_2.28.6-14ubuntu1_amd64.deb pygtk2.deb
+sudo dpkg -i pygtk2.deb
+
+# 2.2.1 Installing Oki Scan Driver
+
+echo "Installing driver..."
+
+sudo dpkg -i okimfpdriver.deb
+
+rm -rf "$HOME/Downloads/$dl_path"
+
+echo ""
+echo "Installation Finished! Do reboot now:"
+echo ""
+echo "sudo reboot"
+echo ""
+echo "After reboot enter:"
+echo ""
+echo "sudo okiscanadm"
+echo ""
+echo "to configure a network scanner."
+echo "In some cases appears:"
+echo ""
+echo "* A network scanner has been added to this PC."
+echo "Your PC could not be added to the MFP. (code=249)"
+echo ""
+echo "In this case the okiscanadm tool must be started a second time, delete the scanner and use okiscanadm again to configure the scanner."
+echo ""
+echo "This window closes in 10 seconds."
+sleep 10
