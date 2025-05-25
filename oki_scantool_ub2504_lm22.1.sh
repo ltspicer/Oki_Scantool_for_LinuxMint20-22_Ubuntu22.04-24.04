@@ -35,15 +35,15 @@ cd $dl_path
 echo "Downloading driver..."
 set -e
 
-echo "==> Installiere 'equivs', falls noch nicht vorhanden..."
+echo "==> Install 'equivs', if not already present..."
 sudo apt-get update
 sudo apt-get install -y equivs
 
-echo "==> Erstelle Arbeitsverzeichnis..."
+echo "==> Create working directory..."
 mkdir -p python2-dummy
 cd python2-dummy
 
-echo "==> Erzeuge control-Datei für Dummy-Paket..."
+echo "==> Create control file for dummy package..."
 equivs-control python2-dummy
 
 cat > python2-dummy <<EOF
@@ -60,13 +60,13 @@ Description: Dummy package to satisfy dependencies for manually installed Python
  This package exists only to satisfy package dependencies.
 EOF
 
-echo "==> Baue Dummy-Paket..."
+echo "==> Build dummy package..."
 equivs-build python2-dummy
 
-echo "==> Installiere Dummy-Paket..."
+echo "==> Install dummy package..."
 sudo dpkg -i python2_2.7.18_all.deb
 
-echo "==> Fertig. 'python2' ist jetzt für APT als installiert markiert."
+echo "==> Done. 'python2' is now marked as installed for APT."
 
 cd ..
 
