@@ -10,6 +10,9 @@ version="1.5"
 # URL to repo
 url="https://raw.github.com/ltspicer/Oki_Scantool_for_LinuxMint20-22_Ubuntu22.04-24.04/main"
 
+# Working directory
+directory="Downloads"
+
 # Local download path
 dl_path="oki_scan_driver"
 
@@ -22,17 +25,20 @@ dl_path="oki_scan_driver"
 # MC332; MC342; MC351; MC352; MC361; MC362; MC363; MC561; MC562; MC563; MC573; MC851; 
 # MC851+; MC852; MC853; MC860; MC861; MC861+; MC862; MC863; MC873; MC883; MPS2731mc; MPS4200mb
 
+echo
 echo "I use ubuntu$version version. See: https://archive.ubuntu.com/ubuntu/pool/universe/p/python2.7"
+echo
+echo "I use folder: $HOME/$directory/$dl_path"
+echo
 
 sudo apt -y --fix-broken install
 
 # Create python2-dummy in apt
 
-cd $HOME/Downloads
+cd $HOME/$directory
 mkdir -p $dl_path/python2
 cd $dl_path
 
-echo "Downloading driver..."
 set -e
 
 echo "==> Install 'equivs', if not already present..."
@@ -72,6 +78,8 @@ cd ..
 
 
 # 1. Oki Scan Driver download files:
+
+echo "Downloading driver..."
 
 wget $url/okimfpdriver.deb
 
@@ -131,7 +139,7 @@ set +e
 sudo ln -s /usr/bin/python2.7 /usr/bin/python
 set -e
 
-cd $HOME/Downloads/$dl_path
+cd $HOME/$directory/$dl_path
 
 # Get dependencies for okiscanntool
 wget $url/libffi7_3.3-5ubuntu1_amd64.deb
@@ -151,7 +159,7 @@ echo "Installing driver..."
 
 sudo dpkg -i okimfpdriver.deb
 
-rm -rf "$HOME/Downloads/$dl_path"
+rm -rf "$HOME/$directory/$dl_path"
 
 echo ""
 echo "Installation Finished! Do reboot now:"
