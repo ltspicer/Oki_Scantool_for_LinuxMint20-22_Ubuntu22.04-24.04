@@ -16,7 +16,7 @@ This script is an extension that also installs the Oki scan tool.
 
 #### - Kubuntu 25.10
 
-        `wget https://raw.github.com/ltspicer/Oki_Scantool_for_LinuxMint20-22_Ubuntu22.04-24.04/main/oki_scantool_ub2510.sh`
+        wget https://raw.github.com/ltspicer/Oki_Scantool_for_LinuxMint20-22_Ubuntu22.04-24.04/main/oki_scantool_ub2510.sh
 
 
 ### 3. Give the script permission to run
