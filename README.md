@@ -26,7 +26,7 @@ This script is an extension that also installs the Oki scan tool.
 
 ### 4. Run the script
 
-        ./oki_scantool*.sh
+        ./oki_scantool_ub2510.sh
 
 -----------------------------------------------------
 
@@ -60,7 +60,7 @@ This script is an extension that also installs the Oki scan tool.
 
 ### 4. Run the script
 
-        ./oki_scantool*.sh
+        ./oki_scantool_ub2504_lm22.1.sh
 
 -----------------------------------------------------
 
