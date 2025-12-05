@@ -25,6 +25,8 @@ dl_path="oki_scan_driver"
 # MC332; MC342; MC351; MC352; MC361; MC362; MC363; MC561; MC562; MC563; MC573; MC851; 
 # MC851+; MC852; MC853; MC860; MC861; MC861+; MC862; MC863; MC873; MC883; MPS2731mc; MPS4200mb
 
+mkdir -p "$HOME/$directory"
+
 echo
 echo "I use ubuntu$version version. See: https://archive.ubuntu.com/ubuntu/pool/universe/p/python2.7"
 echo
