@@ -1,3 +1,36 @@
+# Oki Scantool on Kubuntu 25.10
+
+
+Many thanks to BassHero
+https://github.com/BassHero/okimfpsdrv
+This script is an extension that also installs the Oki scan tool.
+
+
+### 1. Open a terminal window (Ctrl + Alt + T) and type the commands bellow
+
+
+        cd ~/Downloads
+
+
+### 2. Copy the command bellow
+
+#### ~~- Kubuntu 25.10~~
+
+~~`wget https://raw.github.com/ltspicer/Oki_Scantool_for_LinuxMint20-22_Ubuntu22.04-24.04/main/oki_scantool_ub2510.sh`~~
+
+
+### 3. Give the script permission to run
+
+        chmod a+x oki_scantool*.sh
+
+
+### 4. Run the script
+
+        ./oki_scantool*.sh
+
+-----------------------------------------------------
+
+
 # Oki Scantool on Linux Mint 22/22.1, Ubuntu 24.04/25.04
 
 
