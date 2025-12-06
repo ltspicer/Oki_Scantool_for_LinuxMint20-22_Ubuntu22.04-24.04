@@ -1,4 +1,4 @@
-# Oki Scantool on Kubuntu 25.10
+# Oki Scantool on Kubuntu 25.10 (also usable for Linux Mint 22/22.1, Ubuntu 24.04/25.04)
 
 
 Many thanks to BassHero
