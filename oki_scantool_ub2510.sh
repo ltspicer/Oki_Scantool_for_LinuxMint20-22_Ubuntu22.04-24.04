@@ -159,13 +159,17 @@ wget $url/pygtk2.deb
 # Install GTK2 + GDK-Pixbuf dependencies
 sudo apt install -y libgdk-pixbuf2.0-0
 if [ $? -ne 0 ]; then
+    echo
     echo "Installation of libgdk-pixbuf2.0-0 failed. Installing deb packages from github..."
+    echo "================================================================================="
+    echo
+    echo "Download packages"
     wget $url/libgdk-pixbuf2.0-0_2.40.2-3build2_amd64.deb
     wget $url/libgdk-pixbuf2.0-dev_2.40.2-3build2_amd64.deb
     wget $url/libgdk-pixbuf-xlib-2.0-0_2.40.2-3build2_amd64.deb
     wget $url/libgdk-pixbuf-xlib-2.0-dev_2.40.2-3build2_amd64.deb
 
-    # Install base packages in correct order
+    echo "Install packages"
     sudo dpkg -i libgdk-pixbuf-xlib-2.0-0_2.40.2-3build2_amd64.deb
     sudo dpkg -i libgdk-pixbuf-xlib-2.0-dev_2.40.2-3build2_amd64.deb
     sudo dpkg -i libgdk-pixbuf2.0-0_2.40.2-3build2_amd64.deb
