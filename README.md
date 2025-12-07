@@ -1,4 +1,4 @@
-# Oki Scantool on Kubuntu 25.10 (also usable for Linux Mint 22/22.1, Ubuntu 24.04/25.04)
+# Oki Scantool on Ubuntu, Lubuntu, Kubuntu 24.04/25.04/25.10 & Linux Mint 22/22.1/22.2
 
 
 Many thanks to BassHero
@@ -30,39 +30,6 @@ This script is an extension that also installs the Oki scan tool.
 
 -----------------------------------------------------
 
-
-# Oki Scantool on Linux Mint 22/22.1, Ubuntu 24.04/25.04
-
-
-Many thanks to BassHero
-https://github.com/BassHero/okimfpsdrv
-This script is an extension that also installs the Oki scan tool.
-
-
-### 1. Open a terminal window (Ctrl + Alt + T) and type the commands bellow
-
-
-        cd ~/Downloads
-
-
-### 2. Copy the command bellow
-
-#### ~~- Linux Mint 22, Ubuntu 24.04~~
-~~`wget https://raw.github.com/ltspicer/Oki_Scantool_for_LinuxMint20-22_Ubuntu22.04-24.04/main/oki_scantool_ub2404_lm22.sh`~~
-
-#### - Linux Mint 22.1, (Ubuntu 25.04 > not tested)
-        wget https://raw.github.com/ltspicer/Oki_Scantool_for_LinuxMint20-22_Ubuntu22.04-24.04/main/oki_scantool_ub2504_lm22.1.sh
-
-### 3. Give the script permission to run
-
-        chmod a+x oki_scantool*.sh
-
-
-### 4. Run the script
-
-        ./oki_scantool_ub2504_lm22.1.sh
-
------------------------------------------------------
 
 # Oki Scantool on Linux Mint 20.x/21.1, Ubuntu 22.04/22.10
 Anleitung, wie das Oki Scantool (Python2) zum laufen zu bringen
