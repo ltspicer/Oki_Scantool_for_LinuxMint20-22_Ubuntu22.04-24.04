@@ -22,9 +22,6 @@ echo
 # https://github.com/BassHero/okimfpsdrv
 # This script is an extension that also installs the Oki scan tool.
 
-# Current version see: https://archive.ubuntu.com/ubuntu/pool/universe/p/python2.7/
-version="1.5"
-
 # URL to repo
 url="https://raw.github.com/ltspicer/Oki_Scantool_for_LinuxMint20-22_Ubuntu22.04-24.04/main"
 
@@ -45,8 +42,6 @@ dl_path="oki_scan_driver"
 
 mkdir -p "$HOME/$directory"
 
-echo
-echo "I use ubuntu$version version. See: https://archive.ubuntu.com/ubuntu/pool/universe/p/python2.7"
 echo
 echo "I use folder: $HOME/$directory/$dl_path"
 echo
@@ -96,7 +91,6 @@ echo "==> Done. 'python2' is now marked as installed for APT."
 
 cd ..
 
-
 # 1. Oki Scan Driver download files:
 
 echo "Downloading driver..."
@@ -113,29 +107,32 @@ mkdir -p python2
 cd python2
 
 # python2 (2.7.18-3) [universe]
-#wget http://mirrors.kernel.org/ubuntu/pool/universe/p/python-defaults/python2_2.7.18-3_amd64.deb
-wget https://archive.ubuntu.com/ubuntu/pool/universe/p/python-defaults/python2_2.7.18-3_amd64.deb
+PYTHON2=python2_2.7.18-3_amd64.deb
+wget http://mirrors.kernel.org/ubuntu/pool/universe/p/python-defaults/$PYTHON2
 
 # python2-minimal (= 2.7.18-3)
-#wget http://mirrors.kernel.org/ubuntu/pool/universe/p/python-defaults/python2-minimal_2.7.18-3_amd64.deb
-wget https://archive.ubuntu.com/ubuntu/pool/universe/p/python-defaults/python2-minimal_2.7.18-3_amd64.deb
+PYTHON2_MINIMAL=python2-minimal_2.7.18-3_amd64.deb
+wget http://mirrors.kernel.org/ubuntu/pool/universe/p/python-defaults/$PYTHON2_MINIMAL
 
 # python2.7-minimal (>= 2.7.18~)
-wget "http://security.ubuntu.com/ubuntu/pool/universe/p/python2.7/python2.7-minimal_2.7.18-13ubuntu${version}_amd64.deb"
+PYTHON27_MINIMAL=python2.7-minimal_2.7.18-13ubuntu1.5_amd64.deb
+wget http://security.ubuntu.com/ubuntu/pool/universe/p/python2.7/$PYTHON27_MINIMAL
 
 # libpython2.7-minimal (= 2.7.18-13ubuntu1.1) [amd64, i386]
-wget "http://security.ubuntu.com/ubuntu/pool/universe/p/python2.7/libpython2.7-minimal_2.7.18-13ubuntu${version}_amd64.deb"
+LIBPYTHON27_MINIMAL=libpython2.7-minimal_2.7.18-13ubuntu1.5_amd64.deb
+wget http://security.ubuntu.com/ubuntu/pool/universe/p/python2.7/$LIBPYTHON27_MINIMAL
 
 # libpython2-stdlib (= 2.7.18-3)
-#wget http://mirrors.kernel.org/ubuntu/pool/universe/p/python-defaults/libpython2-stdlib_2.7.18-3_amd64.deb
-wget https://archive.ubuntu.com/ubuntu/pool/universe/p/python-defaults/libpython2-stdlib_2.7.18-3_amd64.deb
+LIBPYTHON2_STDLIB=libpython2-stdlib_2.7.18-3_amd64.deb
+wget http://mirrors.kernel.org/ubuntu/pool/universe/p/python-defaults/$LIBPYTHON2_STDLIB
 
-# libpython2.7-stdlib (>= 2.7.18~) 
-wget "http://security.ubuntu.com/ubuntu/pool/universe/p/python2.7/libpython2.7-stdlib_2.7.18-13ubuntu${version}_amd64.deb"
+# libpython2.7-stdlib (>= 2.7.18~)
+LIBPYTHON27_STDLIB=libpython2.7-stdlib_2.7.18-13ubuntu1.5_amd64.deb
+wget http://security.ubuntu.com/ubuntu/pool/universe/p/python2.7/$LIBPYTHON27_STDLIB
 
 # python2.7 (>= 2.7.18~)
-wget "http://security.ubuntu.com/ubuntu/pool/universe/p/python2.7/python2.7_2.7.18-13ubuntu${version}_amd64.deb"
-
+PYTHON27=python2.7_2.7.18-13ubuntu1.5_amd64.deb
+wget http://security.ubuntu.com/ubuntu/pool/universe/p/python2.7/$PYTHON27
 
 # 2. Packages Installation
 
@@ -146,16 +143,16 @@ sudo apt -y --fix-broken install
 sudo apt install libnsl2
 
 # 2.1.1 python2-minimal and dependencies
-sudo dpkg -i "libpython2.7-minimal_2.7.18-13ubuntu${version}_amd64.deb" "python2.7-minimal_2.7.18-13ubuntu${version}_amd64.deb" "python2-minimal_2.7.18-3_amd64.deb"
+sudo dpkg -i $LIBPYTHON27_MINIMAL $PYTHON27_MINIMAL $PYTHON2_MINIMAL	
 
 # 2.1.2 libpython2-stdlib and dependencies
-sudo dpkg -i "libpython2.7-stdlib_2.7.18-13ubuntu${version}_amd64.deb" "libpython2-stdlib_2.7.18-3_amd64.deb"
+sudo dpkg -i $LIBPYTHON27_STDLIB $LIBPYTHON2_STDLIB	
 
 # 2.1.3 python2.7 (>= 2.7.18~) dependency
-sudo dpkg -i "python2.7_2.7.18-13ubuntu${version}_amd64.deb"
+sudo dpkg -i $PYTHON27
 
 # 2.1.4 And finally, python2
-sudo dpkg -i python2_2.7.18-3_amd64.deb
+sudo dpkg -i $PYTHON2
 
 # Symlink python is python2
 set +e
