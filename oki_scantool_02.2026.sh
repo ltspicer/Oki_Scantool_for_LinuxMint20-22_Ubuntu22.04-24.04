@@ -222,5 +222,6 @@ echo "Your PC could not be added to the MFP. (code=249)"
 echo ""
 echo "In this case the okiscanadm tool must be started a second time, delete the scanner and use okiscanadm again to configure the scanner."
 echo ""
-echo "This window closes in 10 seconds."
-sleep 10
+echo "Press any key to end the script"
+read -n 1 -s -r
+
