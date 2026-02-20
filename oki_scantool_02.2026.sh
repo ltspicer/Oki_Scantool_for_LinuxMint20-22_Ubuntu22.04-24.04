@@ -31,6 +31,23 @@ directory="Downloads"
 # Local download path
 dl_path="oki_scan_driver"
 
+# Packages/Links
+
+# python2 (2.7.18-3) [universe]
+PYTHON2=python2_2.7.18-3_amd64.deb
+# python2-minimal (= 2.7.18-3)
+PYTHON2_MINIMAL=python2-minimal_2.7.18-3_amd64.deb
+# python2.7-minimal (>= 2.7.18~)
+PYTHON27_MINIMAL=python2.7-minimal_2.7.18-13ubuntu1.5_amd64.deb
+# libpython2.7-minimal (= 2.7.18-13ubuntu1.1) [amd64, i386]
+LIBPYTHON27_MINIMAL=libpython2.7-minimal_2.7.18-13ubuntu1.5_amd64.deb
+# libpython2-stdlib (= 2.7.18-3)
+LIBPYTHON2_STDLIB=libpython2-stdlib_2.7.18-3_amd64.deb
+# libpython2.7-stdlib (>= 2.7.18~)
+LIBPYTHON27_STDLIB=libpython2.7-stdlib_2.7.18-13ubuntu1.5_amd64.deb
+# python2.7 (>= 2.7.18~)
+PYTHON27=python2.7_2.7.18-13ubuntu1.5_amd64.deb
+
 # Oki scan driver & scan tool install script to ubuntu 24.04 and derivatives.
 # Models: 
 # CX2633 MFP; CX2731 MFP; ES3451 MFP; ES3452 MFP; ES3461 MFP; ES4172LP MFP; 
@@ -106,32 +123,25 @@ echo "Installing Python2..."
 mkdir -p python2    
 cd python2
 
-# python2 (2.7.18-3) [universe]
-PYTHON2=python2_2.7.18-3_amd64.deb
+# python2
 wget http://mirrors.kernel.org/ubuntu/pool/universe/p/python-defaults/$PYTHON2
 
-# python2-minimal (= 2.7.18-3)
-PYTHON2_MINIMAL=python2-minimal_2.7.18-3_amd64.deb
+# python2-minimal
 wget http://mirrors.kernel.org/ubuntu/pool/universe/p/python-defaults/$PYTHON2_MINIMAL
 
-# python2.7-minimal (>= 2.7.18~)
-PYTHON27_MINIMAL=python2.7-minimal_2.7.18-13ubuntu1.5_amd64.deb
+# python2.7-minimal
 wget http://security.ubuntu.com/ubuntu/pool/universe/p/python2.7/$PYTHON27_MINIMAL
 
-# libpython2.7-minimal (= 2.7.18-13ubuntu1.1) [amd64, i386]
-LIBPYTHON27_MINIMAL=libpython2.7-minimal_2.7.18-13ubuntu1.5_amd64.deb
+# libpython2.7-minimal
 wget http://security.ubuntu.com/ubuntu/pool/universe/p/python2.7/$LIBPYTHON27_MINIMAL
 
-# libpython2-stdlib (= 2.7.18-3)
-LIBPYTHON2_STDLIB=libpython2-stdlib_2.7.18-3_amd64.deb
+# libpython2-stdlib
 wget http://mirrors.kernel.org/ubuntu/pool/universe/p/python-defaults/$LIBPYTHON2_STDLIB
 
-# libpython2.7-stdlib (>= 2.7.18~)
-LIBPYTHON27_STDLIB=libpython2.7-stdlib_2.7.18-13ubuntu1.5_amd64.deb
+# libpython2.7-stdlib
 wget http://security.ubuntu.com/ubuntu/pool/universe/p/python2.7/$LIBPYTHON27_STDLIB
 
-# python2.7 (>= 2.7.18~)
-PYTHON27=python2.7_2.7.18-13ubuntu1.5_amd64.deb
+# python2.7
 wget http://security.ubuntu.com/ubuntu/pool/universe/p/python2.7/$PYTHON27
 
 # 2. Packages Installation
@@ -173,13 +183,13 @@ if [ $? -ne 0 ]; then
     echo "Installation of libgdk-pixbuf2.0-0 failed. Installing deb packages from github..."
     echo "================================================================================="
     echo
-    echo "Download packages"
+    echo "Download packages..."
     wget $url/libgdk-pixbuf2.0-0_2.40.2-3build2_amd64.deb
     wget $url/libgdk-pixbuf2.0-dev_2.40.2-3build2_amd64.deb
     wget $url/libgdk-pixbuf-xlib-2.0-0_2.40.2-3build2_amd64.deb
     wget $url/libgdk-pixbuf-xlib-2.0-dev_2.40.2-3build2_amd64.deb
 
-    echo "Install packages"
+    echo "Install packages..."
     sudo dpkg -i libgdk-pixbuf-xlib-2.0-0_2.40.2-3build2_amd64.deb
     sudo dpkg -i libgdk-pixbuf-xlib-2.0-dev_2.40.2-3build2_amd64.deb
     sudo dpkg -i libgdk-pixbuf2.0-0_2.40.2-3build2_amd64.deb
@@ -205,23 +215,24 @@ sudo dpkg -i okimfpdriver.deb
 
 rm -rf "$HOME/$directory/$dl_path"
 
-echo ""
+echo
 echo "Installation Finished! Do reboot now:"
-echo ""
+echo
 echo "sudo reboot"
-echo ""
+echo
 echo "After reboot enter:"
-echo ""
+echo
 echo "sudo okiscanadm"
-echo ""
+echo
 echo "to configure a network scanner."
+echo
 echo "In some cases appears:"
-echo ""
+echo
 echo "* A network scanner has been added to this PC."
 echo "Your PC could not be added to the MFP. (code=249)"
-echo ""
+echo
 echo "In this case the okiscanadm tool must be started a second time, delete the scanner and use okiscanadm again to configure the scanner."
-echo ""
+echo
 echo "Press any key to end the script"
 read -n 1 -s -r
 
