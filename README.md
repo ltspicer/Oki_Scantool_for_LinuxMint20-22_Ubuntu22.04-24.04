@@ -1,4 +1,4 @@
-# Oki Scantool on Ubuntu, Lubuntu, Kubuntu 24.04/25.xx & Linux Mint 22.x
+# Oki Scantool on Ubuntu/Lubuntu/Kubuntu 24.04/25.xx/26.04 & Linux Mint 22.x
 
 
 Many thanks to BassHero
